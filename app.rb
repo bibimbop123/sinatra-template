@@ -41,3 +41,24 @@ get("/:department_id") do
   end
   erb(:departments)
 end
+get "/:department_id/:object_id" do
+  # Access the parameters using params[:department_id] and params[:object_id]
+  department_id = params[:department_id]
+  object_id = params[:object_id]
+  
+  # Your code to fetch data using these IDs
+  # ...
+  url = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=#{department_id}/[#{objectID}]"
+  response = HTTP.get(url)
+  if response.body.empty?
+    @data = "No response received from API"
+  else
+    begin
+      @data = JSON.parse(response.body)
+    rescue JSON::ParserError
+      @data = "Response is not valid JSON"
+    end
+  end
+  
+  erb :singlepage # Render your view/template
+end

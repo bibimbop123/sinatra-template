@@ -1,2 +1,6 @@
 
-<h1><a href="/<%=@data.fetch("objectIDs")%>" ><%= @data.fetch("objectIDs") %></a></h1>
+<% @data.fetch("objectIDs").each do |object_id| %>
+  <h1>
+    <a href="/<%= object_id %>"><%= object_id %></a>
+  </h1>
+<% end %>
