@@ -4,6 +4,8 @@ require "http"
 require "json"
 require 'dotenv/load'
 
+RESULTS_PER_PAGE = 10
+
 get("/") do 
   url = "https://collectionapi.metmuseum.org/public/collection/v1/departments"
   response = HTTP.get(url)
@@ -22,10 +24,12 @@ end
 
 get("/:department_id") do
   @id = params.fetch("department_id")
-
-  url = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=#{@id}"
+  page = params.fetch("page", 1).to_i  # Get the requested page number or default to 1
+  
+  offset = (page - 1) * RESULTS_PER_PAGE  # Calculate the offset based on page number
+  
+  url = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=#{@id}&offset=#{offset}&limit=#{RESULTS_PER_PAGE}"
   response = HTTP.get(url)
- 
   if response.body.empty?
     @data = "No response received from API"
   else
