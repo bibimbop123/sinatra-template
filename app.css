@@ -1,0 +1,16 @@
+#header {
+  font-size:3em;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+#department {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+}
+ul {
+  list-style-type: none;
+}

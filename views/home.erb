@@ -1,9 +1,9 @@
- <h1>The Metropolitan Museum of Art Collection</h1>
+ <h1 id="header">The Metropolitan Museum of Art Collection</h1>
 
 <ul>
   <% @data.each do |department| %>
     <li>
-      <a href="/<%= department.fetch("departmentId") %>"><%= department.fetch("displayName") %></a>
+      <a id="department" href="/<%= department.fetch("departmentId") %>"><%= department.fetch("displayName") %></a>
     </li>
   <% end %>
 </ul>
