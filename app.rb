@@ -41,7 +41,7 @@ get "/:department_id/:object_id" do
   department_id = params[:department_id]
   object_id = params[:object_id]
   
-  url = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=#{department_id}/[#{object_id}]"
+  url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/#{object_id}"
   response = HTTP.get(url)
   if response.body.empty?
     @data = "No response received from API"

@@ -1,7 +1,7 @@
 <div id="objects">
   <% @data.fetch("objectIDs").each do |object_id| %>
     <div class="object-link">
-      <a href="/<%= object_id %>"><%= object_id %></a>
+      <a href="<%= @id %>/<%= object_id %>"><%= object_id %></a>
     </div>
   <% end %>
 </div>

@@ -1,8 +1,14 @@
-<h1> hello </h1>
+
 <div id="objectsId">
-  <% @data.fetch("objectIDs").each do |object_id| %>
     <div>
-      <%= object_id.title %>
+      <h1 class="header">Art Piece #<%= @data.fetch("objectID") %> </h1>
+      <img class="art" src="<%= @data.fetch("primaryImage") %>" alt="<%= @data.fetch("title") %>">
+      <% @data.fetch("additionalImages", []).each do |image_url| %>
+       <img class="art" src="<%= image_url %>" alt="<%= @data.fetch("title") %>">
+      <% end %>
+      <div> <%= @data.fetch("title")%> </div>
+      <div> by <%= if @data.fetch("artistDisplayName") == nil then unknown else @data.fetch("artistDisplayName") end%></div>
+      <div> <%= if @data.fetch("artistDisplayBio") == nil then unknown else @data.fetch("artistDisplayBio") end %></div>
+      <div> <%= @data.fetch("classification")%></div>
     </div>
-  <% end %>
 </div>
