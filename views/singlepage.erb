@@ -1,0 +1,8 @@
+<h1> hello </h1>
+<div id="objectsId">
+  <% @data.fetch("objectIDs").each do |object_id| %>
+    <div>
+      <%= object_id.title %>
+    </div>
+  <% end %>
+</div>
