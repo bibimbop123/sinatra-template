@@ -14,3 +14,25 @@
 ul {
   list-style-type: none;
 }
+
+
+#objects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+}
+
+.object-link {
+  background-color: lightcoral;
+  padding: 2em;
+  margin: 2em;
+  color: black; 
+  text-align: center; 
+  text-decoration: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px; 
+}

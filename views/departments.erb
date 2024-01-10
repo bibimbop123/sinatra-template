@@ -1,6 +1,7 @@
-
-<% @data.fetch("objectIDs").each do |object_id| %>
-  <h1>
-    <a href="/<%= object_id %>"><%= object_id %></a>
-  </h1>
-<% end %>
+<div id="objects">
+  <% @data.fetch("objectIDs").each do |object_id| %>
+    <div class="object-link">
+      <a href="/<%= object_id %>"><%= object_id %></a>
+    </div>
+  <% end %>
+</div>
