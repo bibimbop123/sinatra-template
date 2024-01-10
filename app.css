@@ -63,3 +63,6 @@ ul {
   border-radius: 15px;
   z-index: -1;
 }
+.description {
+  font-size:2em;
+}

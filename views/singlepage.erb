@@ -6,9 +6,9 @@
       <% @data.fetch("additionalImages", []).each do |image_url| %>
        <img class="art" src="<%= image_url %>" alt="<%= @data.fetch("title") %>">
       <% end %>
-      <div> <%= @data.fetch("title")%> </div>
-      <div> by <%= if @data.fetch("artistDisplayName") == nil then unknown else @data.fetch("artistDisplayName") end%></div>
-      <div> <%= if @data.fetch("artistDisplayBio") == nil then unknown else @data.fetch("artistDisplayBio") end %></div>
-      <div> <%= @data.fetch("classification")%></div>
+      <div class="description"> <%= @data.fetch("title")%> </div>
+      <div class="description"> by <%= if @data.fetch("artistDisplayName") == nil then unknown else @data.fetch("artistDisplayName") end%></div>
+      <div class="description"> <%= if @data.fetch("artistDisplayBio") == nil then unknown else @data.fetch("artistDisplayBio") end %></div>
+      <div class="description"> <%= @data.fetch("classification")%></div>
     </div>
 </div>
